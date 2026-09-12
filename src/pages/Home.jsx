@@ -114,6 +114,14 @@ function Home() {
     }
   }
 
+  const  handleStartUser = ()=>{
+    if(!user){
+      navigate("/auth");
+    }else{
+      navigateByRole(user?.role, navigate)
+    }
+  }
+
   return (
     <div className="home">
       {/* ==================== Top Announcement Banner ==================== */}
@@ -238,7 +246,7 @@ function Home() {
             </ul>
 
             <button
-              onClick={() => navigateByRole(user?.role, navigate)}
+              onClick={() => handleStartUser()}
               className="home-showcase__cta"
             >
               همین حالا شروع کنید

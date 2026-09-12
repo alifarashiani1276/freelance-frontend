@@ -2025,16 +2025,20 @@ body {
 }
 
 /* موبایل: کنار هم جا نمیشه، می‌ره زیر هم */
+/* این بخش رو توی index.css پیدا کن و همین @media (max-width: 640px) مربوط به
+   .home-founder__card رو با این نسخه جایگزین کن */
+
 @media (max-width: 640px) {
   .home-founder__card {
-    @apply flex-col;
+    @apply flex-col-reverse; /* عکس (اول در JSX) پایین میفته، متن بالا */
     min-height: 0;
   }
 
   .home-founder__avatar {
     width: 100%;
     max-width: 100%;
-    height: 240px;
+    height: auto; /* دیگه ارتفاع ثابت نداره -> برش نمیخوره */
+    object-fit: contain; /* اطمینان از اینکه کل عکس (قدی) دیده میشه */
   }
 
   .home-founder__content {
@@ -2042,7 +2046,6 @@ body {
     padding: 1.5rem 1.5rem 2rem;
   }
 }
-
 /* این بلاک رو به آخر index.css اضافه کن */
 
 .home-founder__contact {
