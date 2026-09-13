@@ -20,7 +20,6 @@ function TextField({
       <input
         {...register(name, validationSchema)}
         id={name}
-        id={name}
         type={type}
         dir={dir}
         placeholder={placeholder}
@@ -30,9 +29,7 @@ function TextField({
       />
 
       {errors?.[name] && (
-        <p className="text-xs text-red-500 mt-1">
-          {errors[name]?.message}
-        </p>
+        <p className="text-xs text-red-500 mt-1">{errors[name]?.message}</p>
       )}
     </div>
   );

@@ -136,8 +136,8 @@ html {
 }
 
 .rti--container {
-  background-color: rgb(var(--surface-2));
-  border: 1px solid rgb(var(--border-default));
+  background-color: rgb(var(--surface-2)) !important;
+  border: 1px solid rgb(var(--border-default)) !important;
   --rti-radius: 8px;
   --rti-s: 8px;
   --rti-tag: #1f1f23;
@@ -145,19 +145,19 @@ html {
 }
 
 .rti--container:focus-within {
-  border-color: rgba(37, 99, 235, 0.5);
+  border-color: rgba(37, 99, 235, 0.5) !important;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .rti--container .rti--input {
-  background-color: transparent;
-  color: rgb(var(--color-secondary-900));
+  background-color: transparent !important;
+  color: rgb(var(--color-secondary-900)) !important;
   padding: 0.3rem 1rem;
 }
 
 .rti--tag {
-  background-color: rgb(var(--surface-hover-2));
-  color: rgb(var(--color-secondary-900));
+  background-color: rgb(var(--surface-hover-2)) !important;
+  color: rgb(var(--color-secondary-900)) !important;
 }
 
 * {
@@ -692,6 +692,14 @@ body {
   .textField__input:focus {
     border-color: rgba(37, 99, 235, 0.5);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+
+  .textField__input:-webkit-autofill,
+  .textField__input:-webkit-autofill:hover,
+  .textField__input:-webkit-autofill:focus {
+    -webkit-text-fill-color: rgb(var(--color-secondary-900));
+    -webkit-box-shadow: 0 0 0 1000px rgb(var(--surface-2)) inset;
+    transition: background-color 5000s ease-in-out 0s;
   }
 
   .btn {
@@ -2025,20 +2033,16 @@ body {
 }
 
 /* موبایل: کنار هم جا نمیشه، می‌ره زیر هم */
-/* این بخش رو توی index.css پیدا کن و همین @media (max-width: 640px) مربوط به
-   .home-founder__card رو با این نسخه جایگزین کن */
-
 @media (max-width: 640px) {
   .home-founder__card {
-    @apply flex-col-reverse; /* عکس (اول در JSX) پایین میفته، متن بالا */
+    @apply flex-col;
     min-height: 0;
   }
 
   .home-founder__avatar {
     width: 100%;
     max-width: 100%;
-    height: auto; /* دیگه ارتفاع ثابت نداره -> برش نمیخوره */
-    object-fit: contain; /* اطمینان از اینکه کل عکس (قدی) دیده میشه */
+    height: 240px;
   }
 
   .home-founder__content {
@@ -2046,6 +2050,7 @@ body {
     padding: 1.5rem 1.5rem 2rem;
   }
 }
+
 /* این بلاک رو به آخر index.css اضافه کن */
 
 .home-founder__contact {
@@ -2193,7 +2198,9 @@ body {
   border: none;
   color: #fff;
   background: #2563eb;
-  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5), var(--shadow-md);
+  box-shadow:
+    0 10px 25px -5px rgba(37, 99, 235, 0.5),
+    var(--shadow-md);
   cursor: pointer;
   animation: support-widget-float 2.6s ease-in-out infinite;
 }
