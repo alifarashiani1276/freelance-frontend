@@ -2040,12 +2040,16 @@ body {
   }
 
   .home-founder__avatar {
+    order: 2; /* عکس بره پایینِ متن */
     width: 100%;
     max-width: 100%;
-    height: 240px;
+    height: auto; /* به‌جای ارتفاع ثابت */
+    object-fit: contain; /* به‌جای cover، تا برش نخوره */
+    object-position: center;
   }
 
   .home-founder__content {
+    order: 1; /* متن بیاد بالا */
     text-align: center;
     padding: 1.5rem 1.5rem 2rem;
   }
